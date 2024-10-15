@@ -15,14 +15,34 @@ class LibraryTest {
     @Test fun fizzbuzzToSix() {
         assertEquals("FIZZBUZZFIZZ", fizzbuzz(1..6))
     }
+    @Test fun fizzbuzzToSeven() {
+        assertEquals("FIZZBUZZFIZZDOH!", fizzbuzz(1..7))
+    }
     @Test fun fizzbuzzToTwelve() {
-        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZ", fizzbuzz(1..12))
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZ", fizzbuzz(1..12))
     }
     @Test fun fizzbuzzToFifteen() {
-        assertEquals("FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZ", fizzbuzz(1..15))
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZ", fizzbuzz(1..15))
     }
     // Fizzbuzz to 25 should equal "FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZ"
     // Fizzbuzz to 50 should equal "FIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZFIZZFIZZBUZZFIZZFIZZBUZZFIZZBUZZ"
+    @Test fun fizzbuzzToTwentyOne() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZDOH!", fizzbuzz(1..21))
+    }
+    @Test fun fizzbuzzToThirtyFive() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZDOH!", fizzbuzz(1..35))
+    }
+
+    @Test fun fizzbuzzToFifty() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZDOH!FIZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!BUZZ", fizzbuzz(1..50))
+    }
+
+    @Test fun fizzbuzzToHundred() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZDOH!FIZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZFIZZBUZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZFIZZBUZZDOH!FIZZBUZZFIZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZ", fizzbuzz(1..100))
+    }
+    @Test fun fizzbuzzToHundredAndFive() {
+        assertEquals("FIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZBUZZDOH!FIZZFIZZBUZZFIZZDOH!FIZZBUZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZFIZZBUZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZFIZZBUZZDOH!FIZZBUZZFIZZFIZZDOH!BUZZFIZZFIZZBUZZDOH!FIZZBUZZFIZZDOH!FIZZBUZZFIZZFIZZBUZZDOH!", fizzbuzz(1..105))
+    }
 
     //@Test fun fizzbuzzgenToFifteen() {
     //    val fb = fizzbuzzgen(mapOf(3 to "FIZZ", 5 to "BUZZ"))
@@ -39,6 +59,7 @@ class LibraryTest {
     @Test fun philosopherTests() {
         var seneca = Philosopher.THINKING
         assertEquals("Deep thoughts....", seneca.toString())
+
 
         // Shift to talking
         seneca = seneca.signal()
